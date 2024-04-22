@@ -1,0 +1,9 @@
+flask
+numpy
+opencv-python
+tensorflow
+keras
+pickle5
+requests
+nltk
+google-api-python-client
