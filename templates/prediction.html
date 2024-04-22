@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>The uploaded image is predicted to be: {{ predicted_class }}</p>
+    <div class="image-container">
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="{{ filename }}">
+    </div>
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% else %}
+    <h3>Recipe Steps:</h3>
+    <ol>
+        {% for step in steps %}
+        <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+</body>
+</html>

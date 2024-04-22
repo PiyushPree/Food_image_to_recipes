@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  {% if recipe %}
+  <h1>{{ recipe.title }}</h1>
+  <p>{{ recipe.instructions }}</p>
+  <h2>Steps:</h2>
+  <ol>
+    {% for step in steps %}
+    <li>{{ step }}</li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p>No recipe found for your search.</p>
+  {% endif %}
+</body>
+
+</html>
